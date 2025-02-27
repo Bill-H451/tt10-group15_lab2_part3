@@ -16,7 +16,7 @@ module tt_um_example (
     input  wire       rst_n     // reset_n - low to reset
 );
     parameter n = 8;
-    int i = 0;
+    parameter i = 0;
     reg C;
     reg [7:0] O;
     
