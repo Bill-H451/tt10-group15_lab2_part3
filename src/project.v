@@ -24,6 +24,7 @@ module tt_um_example (
   // All output pins must be assigned. If not used, assign to 0.
     always @(ui_in, uio_in)
     begin
+        i = 0;
         D = 0;
         E = 0;
         O = 0;
