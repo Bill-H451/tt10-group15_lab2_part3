@@ -9,11 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The function is stored in /src/project.v
 
 ## How to test
 
-Explain how to use your project
+run /test/test.py
 
 ## External hardware
 
