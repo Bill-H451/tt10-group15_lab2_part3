@@ -30,10 +30,9 @@ module tt_um_example (
         O = 0;
         for (i=n-1; i>0; i--)
         begin
-            D = ui_in[i] ^ uio_in[i];
+            D = (ui_in[i] ^ uio_in[i]);
             if (D & ~E) O = (ui_in[i]) ? ui_in : uio_in;
             E = D | E；
-            i--;
         end
     end
 
