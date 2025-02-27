@@ -15,7 +15,6 @@ module tt_um_example (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    parameter n = 8;
     parameter i = 0;
     reg D;
     reg E;
@@ -28,12 +27,13 @@ module tt_um_example (
         D = 0;
         E = 0;
         O = 0;
-        for (i=n-1; i>0; i--)
+        for (i=7; i>0; i--)
         begin
             D = (ui_in[i] ^ uio_in[i]);
-            if (D & ~E) 
-                O = (ui_in[i]) ? ui_in : uio_in, 
-                E = 1
+            if (D & ~E) begin
+                O = (ui_in[i]) ? ui_in : uio_in;
+                E = 1;
+            end
         end
     end
 
