@@ -33,8 +33,6 @@ module tt_um_my_max (
             if (C == 1) O = (ui_in[i]) ? ui_in : uio_in;
             i--;
         end
-        
-        
     end
 
   assign uo_out = O;
