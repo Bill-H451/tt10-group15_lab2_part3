@@ -15,7 +15,7 @@ module tt_um_example (
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
-    parameter i = 0;
+    int i = 0;
     reg D;
     reg E;
     reg [7:0] O;
@@ -24,13 +24,13 @@ module tt_um_example (
   // All output pins must be assigned. If not used, assign to 0.
     always @(ui_in, uio_in)
     begin
-        i = 0;
+        i = 7;
         D = 0;
         E = 0;
         O = 0;
-        for (i=7; i>0; i--)
+        for (i=7; i>=0; i--)
         begin
-            D = (ui_in[i] ^ uio_in[i]);
+            D = ui_in[i] ^ uio_in[i];
             if (D & ~E) begin
                 O = (ui_in[i]) ? ui_in : uio_in;
                 E = 1;
