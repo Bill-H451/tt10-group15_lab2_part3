@@ -17,20 +17,22 @@ module tt_um_example (
 );
     parameter n = 8;
     parameter i = 0;
-    reg C;
+    reg D;
+    reg E;
     reg [7:0] O;
     
 
   // All output pins must be assigned. If not used, assign to 0.
     always @(ui_in, uio_in)
     begin
-        i = n - 1;
-        C = 0;
+        D = 0;
+        E = 0;
         O = 0;
-        while (i >= 0 & C == 0)
+        for (i=n-1; i>0; i--)
         begin
-            C = ui_in[i] ^ uio_in[i];
-            if (C == 1) O = (ui_in[i]) ? ui_in : uio_in;
+            D = ui_in[i] ^ uio_in[i];
+            if (D & ~E) O = (ui_in[i]) ? ui_in : uio_in;
+            E = D | E；
             i--;
         end
     end
